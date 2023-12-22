@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>漢銘基督教醫院 │ Hanming Christian Hospital</title>
+    <!-- 連結Bootstrap.css -->
+     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  -->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- 使用font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- TODO: 1.加上css的link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- TODO: 2. favicon(網站圖標) -->
+    <link rel="icon shortcut" href="./img/CH_logo.png">
+</head>
+<body>
+    <!-- navbar -->
+    <!-- TODO: 3. 定位在最上面 fixed-top -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand px-3" target="_blank" href="https://hm.cch.org.tw/">漢銘基督教醫院</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">查詢預約掛號</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">取消預約掛號</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/opd_5.aspx">看診進度查詢</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!------------------------------------------------------------------------------------>
+    <!-- header -->
+    <!-- TODO: 4. 進css加入背景圖片和設定 -->
+    <!-- TODO: 5. 文字設為白色置中, class="container text-white text-center mt-5" -->
+    <!-- container幫妳寫好邊界 -->
+    <!-- <header id="header" class="jumbotron">
+        <div class="container text-white text-center mt-5">
+            <h1>Hello!My Friends!</h1>
+            <p>We focus on providing the project management &amp; data storage solutions.</p>
+        </div>
+    </header> -->
+    <!------------------------------------------------------------------------------------>
+    <!-- introSection -->
+    <!-- TODO: 6. 設定introSection上下padding為5倍(py-5) -->
+    <section id="introSection" class="py-5">
+        <h1 class="section-title text-center text-secondary mt-5">科別</h1>
+        <div class="container">
+            <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">內科</button>
+                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">外科</button>
+                  <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">小兒科</button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">婦產科</button>
+                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">內科...</div>
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">外科...</div>
+                  <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">小兒科...</div>
+                  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">婦產科...</div>
+                  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">...</div>
+                </div>
+              </div>
+        </div>
+    </section>
+    <!------------------------------------------------------------------------------------>
+    <!-- featuresSection -->
+    <section id="featuresSection" class="py-5 bg-secondary text-white">
+        <div class="container">
+            <h1 class="section-title mb-5 text-center">Features</h1>
+            <!-- 設置置中 -->
+            <div class="row justify-content-center">
+                <!-- TODO: 13. 設定此區內文字 寬度為8欄(col-md-8)-->
+                <div class="col-md-8">
+                    <!-- 為article1 article2 設置collapse互動方式 data-toggle data-target->id -->
+                    <!-- TODO: 14.加上 data-toggle="collapse" data-target="#article1" -->
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="#article1">Team</button>
+                    <!-- TODO: 15.加上 data-toggle="collapse" data-target="#article2" -->
+                    <button class="btn btn-primary" data-toggle="collapse" data-target="#article2">Location</button>
+                    <article class="my-3 collapse" id="article1">
+                        <h3>Team</h3>
+                        <p>Our team members started with only 10 people. We're Website developer, Security engineer,
+                            Graphic
+                            Designer, Information Architect , But before the company scaled up, we're all wears more
+                            than
+                            one hat. We provide different kinds of
+                            <strong>Project management, Security and Data Storage solution package</strong> for our
+                            customers </p>
+                    </article>
+                    <article class="my-3 collapse" id="article2">
+                        <h3>Location</h3>
+                        <p>We're based in Taipei Taiwan. There are several international branch offices in Hong Kong,
+                            New York,
+                            Albuquerque, Dublin and GuangDong. You could contact the nearest office for you, or if
+                            you're
+                            interested to work with us. please follow our recruit news</p>
+                    </article>
+
+
+
+
+
+                    <nav class="nav nav-pills">
+                       <a data-toggle="tab" class="nav-link active" href="#article3">Environment</a>
+                       <a data-toggle="tab" class="nav-link" href="#article4">Philosophy</a>
+                    </nav>
+                    <!-- 為article3 article4 設置tab互動方式 tab-content，tab-pane -->
+                    <!-- TODO: 16. 加上class="tab-content" -->
+                    <div class="tab-content">
+                        <!-- TODO: 17. 在class中加上 "tab-pane active" -->
+                        <article id="article3" class="my-3 tab-pane active">
+                            <h3>Environment</h3>
+                            <p>We have a cozy office environment not just create casual atmosphere for daily working
+                                time, but also
+                                encourage our employee stay for the internal self-learning project hosted by our HR and
+                                Software
+                                teams. Its fun to learn challenging new things. We provide lots of courses in the
+                                topic of
+                                <strong>Languages learning, Software skill and Negotiation skill trainings.</strong>
+                                Check out more details
+                            </p>
+                        </article>
+                        <!-- TODO: 18. 在class中加上 "tab-pane" -->
+                        <article id="article4" class="my-3 tab-pane">
+                            <h3>Philosophy</h3>
+                            <p>We always keep our bussiness and products simple. So it will always be easy to learn and
+                                use. Our
+                                goal is making it simple but effective. Even though it might be the first time to use
+                                that kinds
+                                of product, we'll try to make sure every steps will be clear to understand for you. If
+                                needs
+                                any helps, our technical support team will be always standing by.
+                            </p>
+                        </article>
+                    </div>
+                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/rUrzuF8d9O0?si=eZ23Q2-eSsbJhzDv&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------------------------------------------------------>
+    <section id="reviewsSection">
+        <!-- #carouselId -->
+        <!-- TODO: 19. 加上: id="carouselId" class="carousel slide bg-primary" data-ride="carousel"-->
+        <div id="carouselId" class="carousel slide bg-primary"  data-ride="carousel">
+            <!-- TODO: 20-1. <ol> -> 使用class命名"carousel-indicators" -->
+            <!-- TODO: 21-1. <li> -> data-target="#carouselId" data-slide-to="0" class="active" -->
+            <!-- TODO: 21-2. <li> -> data-target="#carouselId" data-slide-to="1" -->
+            <ol class="carousel-indicators">
+                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselId" data-slide-to="1"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active py-5 ">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2">
+                            <!-- TODO: 23. 設定使用者照片變圓型 -> class="w-100 rounded-circle" -->
+                            <img class="w-100 rounded-circle" src="img/reviewer-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6 text-light">
+                            <h3 class="title">Food and beverage manager</h3>
+                            <h4 class="name">Robert A. Welch</h4>
+                            <p>It's definitely the best time saving tools we have purchased in the very long time. It's
+                                awesome,
+                                really.
+                                I can't say enough about how well it's tailored to the needs of their product solutions. Our
+                                team
+                                has
+                                been using tools developed by other companies for 5 years </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- TODO: 22. 加上 class="carousel-item py-5" -->
+                <div class="carousel-item py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-2">
+                            <!-- TODO: 24. 設定使用者照片變圓型 -> class="w-100 rounded-circle" -->
+                            <img class="w-100 rounded-circle" src="img/reviewer-2.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6 text-light">
+                            <h3 class="title">Environmental scientist</h3>
+                            <h4 class="name">Lorraine J. Rollins</h4>
+                            <p>On an everyday basis, They have helps me a lot with the accounting problem with the new
+                                release
+                                company management
+                                software, and we definitely saved lots of money from the software their provides. The
+                                training
+                                of
+                                using
+                                this software is so simple. it's so easy to use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <!------------------------------------------------------------------------------------>
+    <section class="bg-secondary py-5">
+        <div class="row py-5 justify-content-center">
+            <div class="col-md-3 py-3">
+                <h4 class="text-white text-center mb-3">與我們聯絡</h4>
+                <button data-toggle="modal" data-target="#emailModal" class="btn btn-lg btn-block btn-primary">Start Now</button>
+                <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title">Please enter your email</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input placeholder="Email" class="form-control" type="text">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $('#exampleModal').on('show.bs.modal', event => {
+                        var button = $(event.relatedTarget);
+                        var modal = $(this);
+                        // Use above variables to manipulate the DOM
+                        
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallerySection -->
+    <section id="gallerySection">
+        <!-- TODO: 25. 進css設定背景圖片 -->
+        <!-- TODO: 26. 設定此區塊為四個一排 "class="col-sm-6 col-md-3" -->
+        <div class="row">
+            <div id="galleryImage1" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo1</div>
+            </div>
+            <div id="galleryImage2" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo2</div>
+            </div>
+            <div id="galleryImage3" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo3</div>
+            </div>
+            <div id="galleryImage4" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo4</div>
+            </div>
+            <div id="galleryImage5" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo5</div>
+            </div>
+            <div id="galleryImage6" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo6</div>
+            </div>
+            <div id="galleryImage7" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo7</div>
+            </div>
+            <div id="galleryImage8" class="col-sm-6 col-md-3">
+                <div class="galleryText">Photo8</div>
+            </div>
+        </div>
+    </section>
+    <!------------------------------------------------------------------------------------>
+
+    <!-- footer -->
+    <footer id="footer" class="pt-5 bg-secondary text-white">
+        <div class="row mx-5">
+            <!-- TODO: 27. 設定"col-12 col-sm-6 col-md-3" -->
+            <div class="footer-list col-12 col-sm-6 col-md-3">
+                <h4>Contact Us</h4>
+                <a href="mailto:service@brand.com">service@brand.com</a>
+            </div>
+            <!-- TODO: 28. 設定"col-12 col-sm-6 col-md-3" -->
+            <div class="footer-list col-12 col-sm-6 col-md-3">
+                <h5 class="text-uppercase">Company</h5>
+                <ul>
+                    <li>
+                        <a href="#">Careers</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Press</a>
+                    </li>
+                    <li>
+                        <a href="#">Bonus</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- TODO: 29. 設定"col-12 col-sm-6 col-md-3" -->
+            <div class="footer-list col-12 col-sm-6 col-md-3">
+                <h5 class="text-uppercase">Product</h5>
+                <ul>
+                    <li>
+                        <a href="#">Enterprice</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">Security</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- TODO: 30. 設定"col-12 col-sm-6 col-md-3" -->
+            <div class="footer-list col-12 col-sm-6 col-md-3">
+                <h5 class="text-uppercase">Resource</h5>
+                <ul>
+                    <li>
+                        <a href="#">Guilde</a>
+                    </li>
+                    <li>
+                        <a href="#">Help Center</a>
+                    </li>
+                    <li>
+                        <a href="#">API</a>
+                    </li>
+                    <li>
+                        <a href="#">Events</a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <div class="footer-end mt-5 py-2">
+            <p class="text-center">&copy; Copy right 2020 X.Lab</p>
+        </div>
+    </footer>
+
+    <!-- 連結Bootstrap所需要的js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <!-- 連結網頁主程式 -->
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
