@@ -25,7 +25,7 @@
     <!-- navbar -->
     <!-- TODO: 3. 定位在最上面 fixed-top -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand px-3" target="_blank" href="https://hm.cch.org.tw/">漢銘基督教醫院test</a>
+        <a class="navbar-brand px-3" target="_blank" href="https://hm.cch.org.tw/">漢銘基督教醫院</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,8 +61,11 @@
     <section id="introSection" class="py-5">
         <h1 class="section-title text-center text-secondary mt-5">科別</h1>
         <div class="container col-md-8">
-            <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="align-items-start">
+
+
+                
+                <div class="nav nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                   <button class="nav-link btn-lg active fs-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">內科</button>
                   <button class="nav-link btn-lg fs-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">外科</button>
                   <button class="nav-link btn-lg fs-3" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false">小兒科</button>
@@ -71,16 +74,14 @@
                   <button class="nav-link btn-lg fs-3" id="v-pills-other-tab" data-bs-toggle="pill" data-bs-target="#v-pills-other" type="button" role="tab" aria-controls="v-pills-other" aria-selected="false">中醫科</button>
                 </div>
                 <div class="tab-content" id="v-pills-tabContent">
+
                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item active fs-4" aria-current="page"><a href="#">感染科</a></li>
-                            <li class="breadcrumb-item fs-4"><a href="#">心臟血管內科</a></li>
-                            <li class="breadcrumb-item fs-4"><a href="#">胸腔內科</a></li>
-                            <li class="breadcrumb-item fs-4"><a href="#">胃腸肝膽科</a></li>
-                            
-                        </ol>
-                    </nav>
+                   
+                            <a class="btn btn-primary fs-4" role="button" href="#featuresSection">感染科</a>
+                            <a class="btn btn-primary fs-4" role="button" href="#featuresSection">心臟血管內科</a>
+                            <a class="btn btn-primary fs-4" role="button" href="#featuresSection">胸腔內科</a>
+                            <a class="btn btn-primary fs-4" role="button" href="#featuresSection">胃腸肝膽科</a>
+                           
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item fs-4"><a href="#">腎臟內科</a></li>
@@ -151,12 +152,20 @@
                     </nav>
                   </div>
                   <div class="tab-pane fade" id="v-pills-other" role="tabpanel" aria-labelledby="v-pills-other-tab" tabindex="0">
-                    <nav aria-label="breadcrumb">
+                    <div class="row">
+                        <div class="col fs-4 gap-2 mx-auto "><a class="btn btn-primary fs-4" role="button" href="#featuresSection">中醫科</a></div>
+                        <div class="col fs-4 gap-2 mx-auto "><a class="btn btn-primary fs-4" role="button" href="#featuresSection">中西醫整合門診</a></div>
+                        <div class="col"></div>
+                        <div class="col"></div>
+                      </div>
+                    
+                    
+                    <!-- <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item active fs-4" aria-current="page"><a href="#">中醫科</a></li>
                             <li class="breadcrumb-item fs-4"><a href="#">中西醫整合門診</a></li>
                         </ol>
-                    </nav>
+                    </nav> -->
                   </div>
                 </div>
               </div>
