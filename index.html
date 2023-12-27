@@ -221,68 +221,55 @@
     </section>
     <!------------------------------------------------------------------------------------>
     <section id="reviewsSection">
-        <!-- #carouselId -->
-        <!-- TODO: 19. 加上: id="carouselId" class="carousel slide bg-primary" data-ride="carousel"-->
-        <div id="carouselId" class="carousel slide bg-primary"  data-ride="carousel">
-            <!-- TODO: 20-1. <ol> -> 使用class命名"carousel-indicators" -->
-            <!-- TODO: 21-1. <li> -> data-target="#carouselId" data-slide-to="0" class="active" -->
-            <!-- TODO: 21-2. <li> -> data-target="#carouselId" data-slide-to="1" -->
-            <ol class="carousel-indicators">
-                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselId" data-slide-to="1"></li>
-            </ol>
+        <!-- 預約掛號單 -->
+        <div class="bg-primary py-5">
+        <div class="card container col-md-6">
+            <h5 class="card-header text-center">掛號預約單</h5>
 
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active py-5 ">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-2">
-                            <!-- TODO: 23. 設定使用者照片變圓型 -> class="w-100 rounded-circle" -->
-                            <img class="w-100 rounded-circle" src="img/reviewer-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6 text-light">
-                            <h3 class="title">Food and beverage manager</h3>
-                            <h4 class="name">Robert A. Welch</h4>
-                            <p>It's definitely the best time saving tools we have purchased in the very long time. It's
-                                awesome,
-                                really.
-                                I can't say enough about how well it's tailored to the needs of their product solutions. Our
-                                team
-                                has
-                                been using tools developed by other companies for 5 years </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- TODO: 22. 加上 class="carousel-item py-5" -->
-                <div class="carousel-item py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-sm-2">
-                            <!-- TODO: 24. 設定使用者照片變圓型 -> class="w-100 rounded-circle" -->
-                            <img class="w-100 rounded-circle" src="img/reviewer-2.jpg" alt="">
-                        </div>
-                        <div class="col-sm-6 text-light">
-                            <h3 class="title">Environmental scientist</h3>
-                            <h4 class="name">Lorraine J. Rollins</h4>
-                            <p>On an everyday basis, They have helps me a lot with the accounting problem with the new
-                                release
-                                company management
-                                software, and we definitely saved lots of money from the software their provides. The
-                                training
-                                of
-                                using
-                                this software is so simple. it's so easy to use.</p>
-                        </div>
+            <div class="card-body">
+                <div class="container text-center">
+                    <div class="row">
+                      <div class="col card-title">
+                      <p>醫師姓名:</p>
+                        <p>看診日期:</p>
+                      </div>
+                      <div class="col card-title">
+                        <p>已掛號人數:</p>
+                        <p>看診時段:</p>
+                      </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+
+              <p>
+                <label for="select">掛號類別</label>
+                <select id="select">
+                  <option value="">選擇...</option>
+                  <optgroup >
+                    <option value="">初診</option>
+                    <option value="">複診</option>
+                  </optgroup>
+                </select>
+              </p>
+              <p>
+                <label for="password">身分證/居留證號碼</label>
+                <input type="password" id="password">
+              </p>
+              <p>
+                <label for="date">出生日期</label>
+                <input type="date" id="date">
+              </p>
+              <div class="row center ">
+                <div class="col card-title">
+                    <a href="#" class="btn btn-primary">填好送出</a>
+                </div>
+                <div class="col card-title">
+                <a href="#" class="btn btn-primary">重新填寫</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- 預約掛號單 -->
     </section>
     <!------------------------------------------------------------------------------------>
     <section class="bg-secondary py-5">
