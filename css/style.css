@@ -130,3 +130,15 @@ footer ul {
     font-size: 8px;
     margin: 0;
 }
+
+.GetRegBtn{
+    width: 90%;
+    height: 90%;
+    margin: 5px 0 5px 0;
+    border:none ;
+}
+
+
+.table > tbody > tr > th {
+    vertical-align: middle;
+}
