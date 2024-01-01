@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
     <link rel="stylesheet" href="./css/bootstrap.css">
@@ -178,49 +179,59 @@
             <h1 id="Department" class="section-title mb-3 text-center">科別</h1>
             <!-- 時間表格 -->
             <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-3">
-              <button id="btn_week_st" class="btn btn-lg btn-light me-lg-2" type="button"></button>
-              <button id="btn_week_nd" class="btn btn-lg btn-light me-lg-2" type="button"></button>
-              <button id="btn_week_rd" class="btn btn-lg btn-light me-lg-2" type="button"></button>
-              <button id="btn_week_th" class="btn btn-lg btn-light me-lg-2" type="button"></button>
+              <button id="btn_week_st" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(0);"></button>
+              <button id="btn_week_nd" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(1);"></button>
+              <button id="btn_week_rd" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(2);"></button>
+              <button id="btn_week_th" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(3);"></button>
+              
             </div>
             <div class="table-responsive">
             <table class="table table-bordered table-primary text-center fs-5">
                 <thead>
                   <tr>
                     <th scope="col">班別/日期</th>
-                    <th scope="col">星期一</th>
-                    <th scope="col">星期二</th>
-                    <th scope="col">星期三</th>
-                    <th scope="col">星期四</th>
-                    <th scope="col">星期五</th>
-                    <th scope="col">星期六</th>
-                    <th scope="col">星期日</th>
+                    <th scope="col">星期一<p id="Week_Mon" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期二<p id="Week_Tue" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期三<p id="Week_Wed" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期四<p id="Week_Thu" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期五<p id="Week_Fri" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期六<p id="Week_Sat" class="fs-5 lh-base"></p></th>
+                    <th scope="col">星期日<p id="Week_Sun" class="fs-5 lh-base"></p></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">上午<br>9:00~12:00</th>
+                    <th scope="row">上午<br>9:00~12:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
                     <td></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">陳宏德</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">楊伯達</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></button></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃宏凱</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></button></td>
+                    <td>
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">陳宏德</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button>
+                      <input type="hidden" id="week_order" value="0">
+                    </td>
+                    <td>
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">楊伯達</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></button>
+                      <input type="hidden" id="week_order" value="0">
+                    </td>
+                    <td>
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃宏凱</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></button>
+                      <input type="hidden" id="week_order" value="0">
+                    </td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <th scope="row">下午<br>14:00~17:00</th>
+                    <th scope="row">下午<br>14:00~17:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
                     <td></td>
                     <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">廖英傑</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到30號</u></p></button></td>
                     <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到16號</u></p></button><br>
-                        <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">楊淵博</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>額滿</u></p></button></td>
+                        <button class="py-3 GetRegBtn disabled" aria-disabled="true" tabindex="-1" role="button" disabled><p class="h4">楊淵博</p><p class="fs-5 fw-bold" style="color: rgb(255, 90, 61);"><u>額滿</u></p></button></td>
                     <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">蔡正道</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
-                    <th scope="row">晚上<br>18:00~21:00</th>
+                    <th scope="row">晚上<br>18:00~21:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
                     <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到20號</u></p></button></td>
                     <td></td>
@@ -235,43 +246,43 @@
             <!-- 時間表格 -->
         </div>
     </section>
+   
     <!------------------------------- ----------------------------------------------------->
     <section class="row justify-content-center bg-primary text-white py-4" id="reviewsSection" hidden="true"> 
       <!-- 預約掛號單 -->
-      <form class="card col-md-6 py-3">
+      <form class="card col-md-6 py-3 needs-validation" >
         <fieldset>
-          <legend>掛號預約單</legend>
-          <p>當您對欲看診之醫師代碼、看診日期...等資訊不清楚時，請由門診時間表查看相關門診資訊進行掛號 ~ 謝謝。</p>
+          <legend class="fs-3">掛號預約單</legend>
+          <!-- <p class="fs-4">當您對欲看診之醫師代碼、看診日期...等資訊不清楚時，請由門診時間表查看相關門診資訊進行掛號 ~ 謝謝。</p> -->
           <div class="mb-3 row">
-            <label id="DocName" class="col-6"></label>
-            <label id="DocDate" class="col-6"></label>
+            <label id="DocName" class="col-6 fs-4"></label>
+            <label id="DocDate" class="col-6 fs-4"></label>
           </div>
           <div class="mb-3">
-            <label for="RegType" class="form-label">掛號類別</label>
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
-            <label class="form-check-label" for="flexRadioDefault1">
+            <label for="RegType" class="form-label fs-4">掛號類別</label>
+            <input class="form-check-input fs-4" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
+            <label class="form-check-label fs-4" for="flexRadioDefault1">
               初診
             </label>
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required>
-            <label class="form-check-label" for="flexRadioDefault2">
+            <input class="form-check-input fs-4" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required>
+            <label class="form-check-label fs-4" for="flexRadioDefault2">
               複診
             </label>
             <div class="invalid-feedback">More example invalid feedback text</div>
           </div>
           <div class="mb-3">
-            <label for="TextInput" class="form-label">身分證/居留證號碼</label>
-            <input type="text" id="TextInput" class="form-control" placeholder="請輸入身分證/居留證號碼" required>
+            <label for="TextInput" class="form-label fs-4">身分證/居留證號碼</label>
+            <input type="text" id="TextInput" class="form-control fs-4" placeholder="請輸入身分證/居留證號碼" required>
           </div>
           <div class="mb-3">
-              <label for="TextInput" class="form-label">生日(生日為1月17日，格式為0117)</label>
-              <input class="form-control" type="text" id="BDDate" placeholder="請輸入生日（月日）" required>
+              <label for="TextInput" class="form-label fs-4">生日(生日為1月17日，格式為0117)</label>
+              <input class="form-control fs-4" type="text" id="BDDate" placeholder="請輸入生日（月日）" required>
           </div>
-          <button type="submit" class="btn btn-primary text-white">填好送出</button>
-          <button type="reset" class="btn btn-primary text-white">重新填寫</button>
+          <button type="submit" class="btn btn-primary text-white fs-4">填好送出</button>
+          <!-- data-bs-toggle="modal" data-bs-target="#InfoModal" -->
+          <button type="reset" class="btn btn-primary text-white fs-4">重新填寫</button>
         </fieldset>
       </form>
-
-
         <!-- <div class="bg-primary py-5">
         <div class="card container col-md-6">
             <h5 class="card-header text-center">掛號預約單</h5>
@@ -320,7 +331,43 @@
             </div>
           </div> -->
         <!-- 預約掛號單 -->
-    </section>   
+    </section>  
+    <!-- Modal提示窗 -->
+    <div class="modal fade"  role="dialog" id="InfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-3" id="exampleModalLabel">掛號成功</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            <div class="row">
+              <div class="col-lg-12">病患姓名:葉芷君</div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">病歷號:8611953</div>
+              <div class="col-lg-6">院區:漢銘基督教醫院</div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">看診日期:2024/01/02</div>
+              <div class="col-lg-6">時間:上午</div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">科別:感染科</div>
+              <div class="col-lg-6">看診醫師:漢銘基</div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">看診號:35</div>
+              <div class="col-lg-6">診間:206診</div>
+            </div>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div> -->
+        </div>
+      </div>
+    </div> 
     <!------------------------------------------------------------------------------------>
     <footer id="footer" class="pt-5 bg-secondary text-white">
     <div class="container-fluid py-5" style="background-color:#7fc889; height:auto;">

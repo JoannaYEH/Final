@@ -139,6 +139,7 @@ footer ul {
 }
 
 
-.table > tbody > tr > th {
+.table > tbody > tr > th
+,.table > thead > tr > th {
     vertical-align: middle;
 }
