@@ -15,10 +15,11 @@ function changeDepartment(link) {
 }
 
 function GetWeekTable(wod){
-  //var weekod=document.getElementById("week_order").innerHTML;
+ 
   var DT_Week = new Date; 
   var first_Week = DT_Week.getDate() - DT_Week.getDay()+1; // 本周第一天
   getWeeksDate(first_Week+wod*7);
+  document.getElementById("week_order").value=wod;
 }
 
 function getWeeksDate(_Fst){
@@ -32,10 +33,21 @@ function getWeeksDate(_Fst){
 
 }
 
-
-function GetRegForm(DocInfo) {
+//醫生資訊,日期,午別
+function GetRegForm(DocInfo,RegDate,RegNoon,DocName,RegNum) {
+  var DT_Week = new Date; 
+  var first_Week = DT_Week.getDate() - DT_Week.getDay()+1; // 本周第一天
+   var wo=document.getElementById("week_order").value;
    document.getElementById("DocName").innerHTML = '醫師姓名：'+ DocInfo.getElementsByTagName('p')[0].innerHTML;
-   document.getElementById("DocDate").innerHTML = '看診日期：'+ DocInfo.getElementsByTagName('p')[1].innerHTML;
+   document.getElementById("DocDate").innerHTML = '看診日期：'+  GetDateRangeST(first_Week+7*wo+RegDate)+RegNoon;
+   document.getElementById("Info_Date").innerHTML = '看診日期：'+ GetDateRangeST(first_Week+7*wo+RegDate);
+   document.getElementById("Info_Noon").innerHTML = '時間：'+ RegNoon;
+   document.getElementById("Info_Department").innerHTML = '科別：'+ document.getElementById("Department").innerHTML;
+   document.getElementById("Info_DocName").innerHTML = '看診醫師：'+ DocName;
+   var _RegNum=RegNum+1;
+   document.getElementById("Info_RegNum").innerHTML = '看診號:'+ _RegNum;
+   
+   
    document.getElementById("reviewsSection").hidden=false;
   
 } 

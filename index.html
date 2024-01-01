@@ -183,7 +183,7 @@
               <button id="btn_week_nd" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(1);"></button>
               <button id="btn_week_rd" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(2);"></button>
               <button id="btn_week_th" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(3);"></button>
-              
+              <input type="hidden" id="week_order" value="0">
             </div>
             <div class="table-responsive">
             <table class="table table-bordered table-primary text-center fs-5">
@@ -205,16 +205,16 @@
                     <td></td>
                     <td></td>
                     <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">陳宏德</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button>
-                      <input type="hidden" id="week_order" value="0">
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,2,'上午','陳宏德',33);"><p class="h4">陳宏德</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button>
+                      
                     </td>
                     <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">楊伯達</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></button>
-                      <input type="hidden" id="week_order" value="0">
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,3,'上午','楊伯達',2);"><p class="h4">楊伯達</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></button>
+                      
                     </td>
                     <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃宏凱</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></button>
-                      <input type="hidden" id="week_order" value="0">
+                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,4,'上午','黃宏凱',18);"><p class="h4">黃宏凱</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></button>
+                     
                     </td>
                     <td></td>
                     <td></td>
@@ -223,17 +223,17 @@
                     <th scope="row">下午<br>14:00~17:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
                     <td></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">廖英傑</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到30號</u></p></button></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到16號</u></p></button><br>
+                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,2,'下午','廖英傑',30);"><p class="h4">廖英傑</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到30號</u></p></button></td>
+                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,3,'下午','黃靜惠',16);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到16號</u></p></button><br>
                         <button class="py-3 GetRegBtn disabled" aria-disabled="true" tabindex="-1" role="button" disabled><p class="h4">楊淵博</p><p class="fs-5 fw-bold" style="color: rgb(255, 90, 61);"><u>額滿</u></p></button></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">蔡正道</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button></td>
+                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,4,'下午','蔡正道',33);"><p class="h4">蔡正道</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button></td>
                     <td></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">晚上<br>18:00~21:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
-                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到20號</u></p></button></td>
+                    <td><button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,1,'晚上','黃靜惠',20);"><p class="h4">黃靜惠</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到20號</u></p></button></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -349,15 +349,15 @@
               <div class="col-lg-6">院區:漢銘基督教醫院</div>
             </div>
             <div class="row">
-              <div class="col-lg-6">看診日期:2024/01/02</div>
-              <div class="col-lg-6">時間:上午</div>
+              <div class="col-lg-6" id="Info_Date"></div>
+              <div class="col-lg-6" id="Info_Noon"></div>
             </div>
             <div class="row">
-              <div class="col-lg-6">科別:感染科</div>
-              <div class="col-lg-6">看診醫師:漢銘基</div>
+              <div class="col-lg-6" id="Info_Department"></div>
+              <div class="col-lg-6" id="Info_DocName"></div>
             </div>
             <div class="row">
-              <div class="col-lg-6">看診號:35</div>
+              <div class="col-lg-6"  id="Info_RegNum"></div>
               <div class="col-lg-6">診間:206診</div>
             </div>
           </div>
