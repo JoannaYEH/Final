@@ -66,32 +66,84 @@ function GetDateRangeST(_Date){
     return formattedDate;
 }
 
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.getElementsByClassName('needs-validation');
-  // Loop over them and prevent submission
-  var validation = Array.prototype.filter.call(forms, function(form) {
-    form.addEventListener('submit', function(event) {
-      if (form.checkValidity() === true) {
-        // event.preventDefault();
-        // event.stopPropagation();
-        $('#InfoModal').modal('show');
-      }
-      //form.classList.add('was-validated');
-    }, false);
-  });
-}, false);
-})();
 
-$("#InfoModal").on("hidden.bs.modal", function () {
-  // location.reload(true);
-  //location.href = location.href;
-  document.getElementById("reviewsSection").hidden=false;
-  document.getElementById("featuresSection").hidden=false;
-  document.getElementById("week_order").value=0
+
+// (function() {
+//   'use strict';
+//    window.addEventListener('load', function() {
+//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//   var forms = document.getElementsByClassName('needs-validation');
+//   // Loop over them and prevent submission
+//   var validation = Array.prototype.filter.call(forms, function(form) {
+//     form.addEventListener('submit', function(event) {
+//       if (form.checkValidity() === false) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//       }
+//       $('#InfoModal').modal('show');
+//       form.classList.add('was-validated');
+//     }, false);
+//   }, false);
+//  }, false);
+// })();  
+
+
+// (function() {
+//   'use strict';
+//    window.addEventListener('DOMContentLoaded', function() {
+//     const form = document.getElementById("RegForm");
+
+//     function FormSubmit(event) {
+//       if (form.checkValidity() === false) {
+//         event.preventDefault();
+//         event.stopPropagation();
+//       }
+//       $('#InfoModal').modal('show');
+//       form.classList.add('was-validated');
+//     }
+    
+//     form.addEventListener("submit", FormSubmit);
+//  }, true);
+// })();  
+
+
+$(function () {
+  $("#btnSubmit").on("click", function (e) {
+      var form = $("#RegForm")[0];
+      var isValid = form.checkValidity();
+      if (!isValid) {
+          e.preventDefault();
+          e.stopPropagation();
+      }
+      form.classList.add('was-validated');
+      $('#InfoModal').modal('show');
+      return false; // For testing only to stay on this page
+  });
 });
+
+
+$(document).ready(function(){
+  // $("#myBtn").click(function(){
+  //   $("#myModal").modal("show");
+  // });
+ 
+  $("#InfoModal").on('hidden.bs.modal', function(){
+    // alert('The modal is now hidden.');
+    document.getElementById("reviewsSection").hidden=true;
+    document.getElementById("featuresSection").hidden=true;
+    document.getElementById("week_order").value=0;
+    document.getElementById("RegForm").reset();
+  });
+});
+ 
+// $("#InfoModal").on("hidden.bs.modal", function () {
+//   // location.reload(true);
+//   //location.href = location.href;
+//   document.getElementById("reviewsSection").hidden=true;
+//   document.getElementById("featuresSection").hidden=true;
+//   document.getElementById("week_order").value=0;
+//   document.getElementById("RegForm").reset();
+// });
 
 
 
