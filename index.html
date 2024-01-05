@@ -17,16 +17,22 @@
     <!-- 使用font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <!-- TODO: 1.加上css的link -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- TODO: 2. favicon(網站圖標) -->
     <link rel="icon shortcut" href="./img/CH_logo.png">
 </head>
 <body>
+  
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-symbols-outlined">
+    expand_less
+    </span></button>
     <!-- navbar -->
     <!-- TODO: 3. 定位在最上面 fixed-top -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top fs-4">
-        <a class="navbar-brand px-3 fs-4" target="_blank" href="https://hm.cch.org.tw/">漢銘基督教醫院</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fs-4">
+      <img src="./img/CH_logo.png" style="width: 40px;height: 40px;" class="img-responsive logo_2 mx-3">
+        <a class="navbar-brand px-3 fs-3 fw-bold" target="_blank" href="https://hm.cch.org.tw/">漢銘基督教醫院</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,14 +40,14 @@
         <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">查詢預約掛號</a>
-                </li>
+                    <a class="nav-link text-white" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">查詢預約掛號</a>
+                </a>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">取消預約掛號</a>
-                </li>
+                    <a class="nav-link text-white" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/Service-e3.aspx">取消預約掛號</a>
+                </a>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/opd_5.aspx">看診進度查詢</a>
-                </li>
+                    <a class="nav-link text-white" target="_blank" href="https://opdhm.cch.org.tw/hmrg/opd/opd_5.aspx">看診進度查詢</a>
+                </a>
             </ul>
         </div>
     </nav>
@@ -59,112 +65,112 @@
     <!------------------------------------------------------------------------------------>
     <!-- introSection -->
     <!-- TODO: 6. 設定introSection上下padding為5倍(py-5) -->
-    <section id="introSection" class="py-5">
-        <h1 class="section-title text-center text-secondary mt-5">網路掛號</h1>
+    <section id="introSection" >
+        <h1 class="section-title text-center text-primary mt-3">網路掛號</h1>
 
-        <div class="row justify-content-md-center mx-5">
+        <div class="row justify-content-md-center mx-5 mb-5">
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">內科</h5>
+              <div class="card-body Internal">
+                <h5 class="card-title fs-4 text-center fw-bold ">內科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">感染科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">心臟血管內科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">胸腔內科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">胃腸肝膽科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">腎臟內科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">血液腫瘤科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">內分泌新陳代謝科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">過敏免疫風濕科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">一般內科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">老人整合暨衰弱門診</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">神經內科</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">感染科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">心臟血管內科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">胸腔內科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">胃腸肝膽科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">腎臟內科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">血液腫瘤科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">內分泌新陳代謝科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">過敏免疫風濕科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">一般內科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">老人整合暨衰弱門診</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">神經內科</a>
               </ul>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">外科</h5>
+              <div class="card-body Surgical">
+                <h5 class="card-title fs-4 text-center fw-bold">外科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">一般外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">神經外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">骨科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">泌尿科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">重建整形暨手外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">胸腔外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">大腸直腸外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">心臟血管外科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">乳房外科</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">一般外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">神經外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">骨科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">泌尿科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">重建整形暨手外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">胸腔外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">大腸直腸外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">心臟血管外科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">乳房外科</a>
               </ul>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">小兒科</h5>
+              <div class="card-body Pediatrics">
+                <h5 class="card-title fs-4 text-center fw-bold">小兒科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">小兒心臟科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">兒童遺傳科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">兒童腎臟</br>（溫氏現代針灸門診）</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">小兒心臟科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">兒童遺傳科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">兒童腎臟</br>（溫氏現代針灸門診）</a>
               
               </ul>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">婦產科</h5>
+              <div class="card-body Gynecology">
+                <h5 class="card-title fs-4 text-center fw-bold">婦產科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">婦產科</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">婦產科</a>
               </ul>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">其他科</h5>
+              <div class="card-body Others">
+                <h5 class="card-title fs-4 text-center fw-bold">其他科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">兒童心智科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">耳鼻喉科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">皮膚科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">眼科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">家庭醫學科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">職業醫學</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">兒童心智科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">耳鼻喉科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">皮膚科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">眼科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">家庭醫學科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">職業醫學</a>
               </ul>
             </div>
           </div>
           <div class="col-lg-2 col-md-4 mt-2">
             <div class="card">
-              <div class="card-body bg-primary">
-                <h5 class="card-title text-white fs-3">中醫科</h5>
+              <div class="card-body Chinese">
+                <h5 class="card-title fs-4 text-center fw-bold">中醫科</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                  -->
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">中醫科</a></li>
-                <li class="list-group-item"><a href="#featuresSection" class="btn btn-secondary fs-5" onclick="changeDepartment(this)">中西醫整合門診</a></li>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">中醫科</a>
+                <a class="list-group-item btn btn-secondary fs-5" href="#featuresSection" onclick="changeDepartment(this)">中西醫整合門診</a>
               </ul>
             </div>
           </div>
@@ -174,9 +180,9 @@
     </section>
     <!------------------------------------------------------------------------------------>
     <!-- featuresSection -->
-    <section id="featuresSection" class="py-3 bg-secondary text-white" hidden="true">
+    <section id="featuresSection" class="py-3 bg-secondary" hidden="true">
         <div class="container">
-            <h1 id="Department" class="section-title mb-3 text-center">科別</h1>
+            <h1 id="Department" class="section-title mb-3 text-center fs-3  fw-bolder">科別</h1>
             <!-- 時間表格 -->
             <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-3">
               <button id="btn_week_st" class="btn btn-lg btn-light me-lg-2" type="button" onclick="GetWeekTable(0);"></button>
@@ -189,14 +195,14 @@
             <table class="table table-bordered table-primary text-center fs-5">
                 <thead>
                   <tr>
-                    <th scope="col">班別/日期</th>
-                    <th scope="col">星期一<p id="Week_Mon" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期二<p id="Week_Tue" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期三<p id="Week_Wed" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期四<p id="Week_Thu" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期五<p id="Week_Fri" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期六<p id="Week_Sat" class="fs-5 lh-base"></p></th>
-                    <th scope="col">星期日<p id="Week_Sun" class="fs-5 lh-base"></p></th>
+                    <th scope="col">時段/日期</th>
+                    <th scope="col"><p id="Week_Mon" class="fs-5 lh-base"></p>星期一</th>
+                    <th scope="col"><p id="Week_Tue" class="fs-5 lh-base"></p>星期二</th>
+                    <th scope="col"><p id="Week_Wed" class="fs-5 lh-base"></p>星期三</th>
+                    <th scope="col"><p id="Week_Thu" class="fs-5 lh-base"></p>星期四</th>
+                    <th scope="col"><p id="Week_Fri" class="fs-5 lh-base"></p>星期五</th>
+                    <th scope="col"><p id="Week_Sat" class="fs-5 lh-base"></p>星期六</th>
+                    <th scope="col"><p id="Week_Sun" class="fs-5 lh-base"></p>星期日</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -204,18 +210,17 @@
                     <th scope="row">上午<br>9:00~12:00<p id="Week_Mon" class="fs-6"></p></th>
                     <td></td>
                     <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,1,'上午','劉昭韓',33);"><p class="h4">劉昭韓</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></button>
+                      <a class="py-3 btn btn-primary text-white GetRegBtn " onclick="GetRegForm(this,1,'上午','劉昭韓',33);" href="#reviewsSection"><p class="fs-4 fw-bold">劉昭韓</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到33號</u></p></a>
+                    </td>
+                    <td>
+                      <a class="py-3 btn btn-primary text-white GetRegBtn" onclick="GetRegForm(this,2,'上午','洪明暉',2);" href="#reviewsSection"><p class="fs-4 fw-bold">洪明暉</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></a>
                       
                     </td>
                     <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,2,'上午','洪明暉',2);"><p class="h4">洪明暉</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到02號</u></p></button>
                       
                     </td>
                     <td>
-                      
-                    </td>
-                    <td>
-                      <button class="py-3 btn-primary text-white GetRegBtn" onclick="GetRegForm(this,4,'上午','蕭凱鴻',18);"><p class="h4">蕭凱鴻</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></button>
+                      <a class="py-3 btn btn-primary text-white GetRegBtn" onclick="GetRegForm(this,4,'上午','蕭凱鴻',18);" href="#reviewsSection"><p class="fs-4 fw-bold">蕭凱鴻</p><p class="fs-5 fw-bold" style="color: rgb(234, 255, 0);"><u>已掛號到18號</u></p></a>
                      
                     </td>
                     <td></td>
@@ -422,30 +427,33 @@
                 	<div class="line"></div>
                 </div>
                 
-                <div class="col-md-2">
-                	<img src="./img/CH_logo.png" style="width: 100px;height: 100px;" class="img-responsive logo_2">
+               <!-- <div class="col-md-2">
+                	
                 </div>
                 <div class="col-md-7">
                     <div class="container d-flex h-100">
-                        <!-- <ul>
-                           <li><a href="sitemap.aspx">網站地圖</a></li>
-                            <li><a href="privacy.aspx">隱私權宣告</a></li>
+                         <ul>
+                           <li><a href="sitemap.aspx">網站地圖</a>
+                            <li><a href="privacy.aspx">隱私權宣告</a>
                             <li class="dropup footer_1">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">院內入口網  <span class="caret"></span></a>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a href="http://www.hm.cch.org.tw:8080" target="_blank">院內入口網</a></li>
+                                <li><a href="http://www.hm.cch.org.tw:8080" target="_blank">院內入口網</a>
                               </ul>
-                            </li>
+                            </a>
                        </ul>      
-                        <p class="bg-primary fs-5 row justify-content-center align-self-center">2023 © 本網站內容為社群網路研究之課堂作業展示    未經授權．禁止轉載	</p>-->
+                        <p class="bg-primary fs-5 row justify-content-center align-self-center">2023 © 本網站內容為社群網路研究之課堂作業展示    未經授權．禁止轉載	</p>
                       </div>  
                 </div>
-                
+                -->
             </div>
         </div>
 	</div>
     <div class="footer-end ">
         <p class="fs-5  text-center">&copy; Copy right 2024 本網站內容為社群網路研究之課堂作業展示  未經授權．禁止轉載</p>
+        <!-- Back to top button -->
+        
+
     </div>
 </footer>
     <!-- footer -->
@@ -460,8 +468,7 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script> -->
     <!-- 連結網頁主程式 -->
-   
-
+    
 </body>
 
 </html>
